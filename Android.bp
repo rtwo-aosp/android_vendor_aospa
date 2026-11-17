@@ -39,3 +39,15 @@ cc_library_headers {
     ],
     visibility: ["//visibility:public"],
 }
+
+// Stand-in for the LineageOS generated_kernel_headers module, which the
+// Motorola fingerprint HAL uses (raw UAPI headers from the Motorola kernel)
+cc_library_headers {
+    name: "generated_kernel_headers",
+    vendor: true,
+    export_include_dirs: [
+        "../../kernel/motorola/sm8550/include/uapi",
+        "../../kernel/motorola/sm8550/arch/arm64/include/uapi",
+    ],
+    visibility: ["//visibility:public"],
+}
